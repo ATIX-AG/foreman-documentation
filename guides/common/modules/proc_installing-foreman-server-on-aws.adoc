@@ -4,6 +4,10 @@
 You can install {ProjectServer} on your AWS environment.
 
 .Procedure
+ifdef::foreman-deb[]
+. Launch an EC2 instance.
+endif::[]
+ifndef::foreman-deb[]
 . Launch an EC2 instance running {EL} AMI.
 . Connect to the newly created instance.
 . If you use a Red Hat Gold Image, remove the RHUI client and set the `enabled` parameter in the `product-id.conf` to `1`:
@@ -18,5 +22,6 @@ You can install {ProjectServer} on your AWS environment.
 enabled=1
 EOF
 -----
+endif::[]
 . Install {ProjectServer}.
 For more information, see {InstallingServerDocURL}[{InstallingServerDocTitle}].
